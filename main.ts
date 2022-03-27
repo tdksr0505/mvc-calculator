@@ -101,16 +101,11 @@ class Model {
         return formula.filter(e => e);
     }
     public calculateAns(formula: string[]): string{
-        console.log('inp');
-        console.log(formula);
-        let i =0;
-        
         while(formula.length>1){
             let firstIdx = 0;
             let secondIdx = 0;
             let operatorIdx = 0
             while(formula.length>1){
-                i++;
                 operatorIdx = formula.indexOf(OPERATOR.MULTIPLE);
                 if(operatorIdx !== -1){
                     firstIdx = operatorIdx - 1;
@@ -134,10 +129,7 @@ class Model {
                     if(formula[i]===OPERATOR.PLUS){
                         firstIdx = i - 1;
                         secondIdx = i + 1;
-                        console.log(firstIdx);
-                        console.log(secondIdx);
                         formula[i] = this.plus(formula[firstIdx], formula[secondIdx]);
-                        console.log(formula);
                         
                         formula = this.resetFormula(formula, firstIdx, secondIdx);
                         i = -1;
@@ -147,19 +139,14 @@ class Model {
                         firstIdx = i - 1;
                         secondIdx = i + 1;
                         formula[i] = this.minus(formula[firstIdx], formula[secondIdx]);
-                        console.log(firstIdx);
-                        console.log(secondIdx);
                         formula = this.resetFormula(formula, firstIdx, secondIdx);
                         i = -1;
                         break;
                     }
                 }
-            console.log(formula);
 
             }
-            console.log(formula);
         }
-        console.log(i);
         return formula[0];
     }
 }
@@ -211,8 +198,6 @@ class Controller {
     }
 
     private clickOperator(operator: string, FirstNum: string): void{
-        console.log(this.formula);
-        console.log(this.formula[this.formula.length-1]);
         if(this.isLastOperator){
             this.formula.pop();
         }else{
