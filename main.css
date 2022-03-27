@@ -1,0 +1,89 @@
+:root {
+    --btn-width: 60px;
+    --btn-height: 60px;
+    --btn-fontsize: 20px;
+    --double-btn-width: calc(120px + 5px);
+    --triple-btn-width:  calc(180px + 10px);
+}
+*{
+    font-family: 'Microsoft JhengHei';
+}
+.box{
+    width: calc(265px);
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0);
+    padding: 10px;
+    background-color: #000;
+}
+.btn-row{
+    font-size: 0;
+    margin-bottom: 5px;
+}
+
+.display{
+    width: calc(100% - 10px);
+    height: 80px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #000;
+    font-size: 25px;
+    text-align: right;
+    
+}
+.display .formula-area{
+    height: 50%;
+    background: #e5e5e5;
+    padding: 0 5px;
+}
+.display .ans-area{
+    height: 50%;
+    padding: 0 5px;
+}
+.num-btn, .operator-btn, .ac-btn{
+    font-size: var(--btn-fontsize);
+    border: none;
+    color: #fff;
+    margin-right: 5px;
+    cursor: pointer;
+   
+}
+.num-btn{
+    display: inline-block;
+    height: var(--btn-height);
+    width: var(--btn-width);
+    background-color: rgb(88, 88, 88);
+    /* border-radius: 50%; */
+    /* margin-right: 5px; */
+}
+.num-btn:hover{
+    background-color: rgb(39, 39, 39);;
+}
+.num-btn.num-zero{
+    width: var(--double-btn-width);
+    /* border-radius: 30px; */
+}
+.ac-btn{
+    background-color: rgb(196, 196, 196);
+    width: calc(100% / 4 * 3);
+    width: var(--triple-btn-width);
+
+    height: var(--btn-height);
+    /* border-radius: 45px; */
+    color: #000;
+
+}
+.ac-btn:hover{
+    background-color: rgb(167, 167, 167);
+}
+.operator-btn{
+    height: var(--btn-height);
+    width: var(--btn-width);
+    background-color: rgb(255, 166, 1);
+    /* border-radius: 50%; */
+    margin-right: 0;
+}
+.operator-btn:hover{
+    background-color: rgb(206, 135, 5);
+}
